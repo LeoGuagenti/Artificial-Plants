@@ -19,3 +19,20 @@ function createCanvas(height, width){
     canvas.style = "border: 1px solid black";
     return canvas;
 }
+
+function line(x1, y1, x2, y2, context, color="black"){
+    context.strokeStyle = color;
+    context.beginPath();
+    context.moveTo(x1, y1);
+    context.lineTo(x2, y2);
+    context.stroke();
+}
+
+function randHex(){
+    var vals = "0123456789abcdef";
+    var color = "#";
+    for(var i = 0; i < 8; i++){
+        color += vals[Math.floor(Math.random() * vals.length)];
+    }
+    return color;
+}
